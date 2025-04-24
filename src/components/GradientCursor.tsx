@@ -10,7 +10,7 @@ const GradientCursor = () => {
   useEffect(() => {
     const onMouseMove = (e: MouseEvent) => {
       cursorPosition.current = { x: e.clientX, y: e.clientY };
-      
+
       // Show cursor if it was previously hidden
       if (!cursorVisible.current) {
         cursorVisible.current = true;
@@ -20,7 +20,7 @@ const GradientCursor = () => {
           ease: "power2.out"
         });
       }
-      
+
       // Use GSAP for smoother cursor movement
       gsap.to(cursorRef.current, {
         left: cursorPosition.current.x,
@@ -77,7 +77,7 @@ const GradientCursor = () => {
         transform: "translate(-50%, -50%)",
       }}
     >
-      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-blue-500 opacity-70 blur-sm" />
+      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-blue-500 opacity-70 blur-sm" />
       <div ref={innerCursorRef} className="w-3 h-3 rounded-full bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
     </div>
   );
