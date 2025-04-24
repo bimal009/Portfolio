@@ -31,7 +31,7 @@ const Hero = () => {
           {/* Professional title with animation */}
           <div className="relative mb-6">
             <h2 className={`text-xl sm:text-2xl font-medium text-gray-300 transition-all duration-700 delay-[200ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              Full Stack Developer <span className="text-gray-400">from Butwal, Nepal</span>
+              Full Stack Developer
             </h2>
             <div className={`h-0.5 w-16 bg-gradient-to-r from-purple-500 to-transparent mt-3 transition-all duration-700 delay-[400ms] ${isVisible ? 'opacity-100 w-16' : 'opacity-0 w-0'}`}></div>
           </div>
