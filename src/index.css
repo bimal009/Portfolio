@@ -1,0 +1,154 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 85% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 260 85% 4%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 260 85% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 260 76% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 20% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 260 20% 15%;
+    --muted-foreground: 260 10% 70%;
+
+    --accent: 260 20% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 20% 20%;
+    --input: 260 20% 20%;
+    --ring: 260 76% 56%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 260 85% 4%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 260 76% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-purple-900 text-foreground;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+.glow-effect {
+  @apply relative;
+}
+
+.glow-effect::after {
+  content: '';
+  @apply absolute w-full h-full left-0 top-0 bg-purple-glow opacity-70 -z-10 animate-glow blur-xl;
+}
+
+.logo-container {
+  @apply relative;
+}
+
+.logo-container::after {
+  content: '';
+  @apply absolute w-full h-full left-0 top-0 bg-purple-glow opacity-70 -z-10 animate-glow scale-150 blur-xl;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { filter: brightness(1) blur(10px); }
+  50% { filter: brightness(1.2) blur(15px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Text reveal animations */
+.reveal-text {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: theme('colors.purple.800');
+  animation: revealTextAnim 1.2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+@keyframes revealTextAnim {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(101%); }
+}
+
+/* Card hover effects */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.3);
+}
+
+/* Underline animation for links */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: theme('colors.purple.400');
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
