@@ -54,7 +54,7 @@ const TeamSection = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     const ctx = gsap.context(() => {
       // Heading animations
       gsap.fromTo(
@@ -71,7 +71,7 @@ const TeamSection = () => {
           }
         }
       );
-      
+
       gsap.fromTo(
         subheadingRef.current,
         { y: 30, opacity: 0 },
@@ -87,7 +87,7 @@ const TeamSection = () => {
           }
         }
       );
-      
+
       gsap.fromTo(
         techTitleRef.current,
         { y: 30, opacity: 0 },
@@ -103,7 +103,7 @@ const TeamSection = () => {
           }
         }
       );
-      
+
       // Tech stack staggered animation
       if (techStackRef.current) {
         const techItems = techStackRef.current.children;
@@ -125,7 +125,7 @@ const TeamSection = () => {
           }
         );
       }
-      
+
       // Logo animation
       gsap.fromTo(
         logoRef.current,
@@ -143,7 +143,7 @@ const TeamSection = () => {
         }
       );
     });
-    
+
     return () => ctx.revert();
   }, []);
 
@@ -180,7 +180,7 @@ const TeamSection = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative w-full h-full">
               <img
-                src="./logo.png"
+                src="./logo.svg"
                 alt="Personal Logo"
                 className="w-full h-full object-contain z-10 relative"
               />
