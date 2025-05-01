@@ -154,7 +154,12 @@ const ProjectShowcase = () => {
         projectUrl="https://next-gen-it-eight.vercel.app/"
       />
 
-      {/* You can add more project cards here */}
+      <ProjectCard
+        title="UrbanAura – Modern E-commerce UI with React"
+        description="UrbanAura is a sleek, responsive e-commerce frontend built using React, powered by the FakeStore API. It leverages TanStack Query for efficient data fetching, Zustand for lightweight state management, and is styled with Tailwind CSS and shadcn/ui components. The project features dynamic product listings, category-based filtering, a smooth cart experience, and an elegant modern UI."
+        imagePath="./project2.png"
+        projectUrl="https://urbanauranp.vercel.app/"
+      />
     </div>
   );
 };

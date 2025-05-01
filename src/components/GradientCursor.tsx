@@ -72,7 +72,7 @@ const GradientCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="fixed pointer-events-none z-50 opacity-0"
+      className="fixed pointer-events-none z-50 opacity-0 hidden lg:flex"
       style={{
         transform: "translate(-50%, -50%)",
       }}
